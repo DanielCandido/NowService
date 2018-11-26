@@ -1,5 +1,8 @@
 <?php 
+session_start();
 include_once("conexao.php");
+ ?>
+<?php 
 $name = $_POST['Name'];
 $email = $_POST['Email'];
 $cpf = $_POST['Cpf'];
@@ -8,32 +11,27 @@ $adress = $_POST['Adress'];
 $category = $_POST['Category'];
 $fantasyname = $_POST['FantasyName'];
 $password = md5($_POST['Password']);
-$imgperfil = $_FILES['imgprofile'];
+$imgperfil = $_FILES['improfile'];
 
 $query_select = "SELECT Cpf FROM provider WHERE Cpf = '$cpf'";
 $select = mysqli_query($query,$conn);
 $array = mysqli_fetch_array($select);
 $longarray = $array['Cpf'];
 
-if ($longarray != $cpf) {
-if ($imgperfil != null) {
-	$nomefinal = time().'jpg';
-	if (move_uploaded_file($imgperfil['tmp_name'], $nomefinal)) {
-		$tamanhoImg = filesize($nomefinal);
+			if ($longarray != null) {
+				echo "<script language='javascript' type='text/javascript'>alert('Esse Cpf já existe em nosso cadastro');window.location.href='cadastrar.php';</script>";
+						die();
+			} else {
+				$query = "INSERT INTO provider (Name,Email,Cpf,DateOfBirth,Adress,Category,FantasyName,Password,improfile)
+				VALUES ('$name','$email','$cpf','$dataofbirth','$adress','$category','$fantasyname','password','$imgperfil')";
+				$insert = mysqli_query($conn,$query);
+				if (mysqli_affected_rows($conn) != 0) {
+				 $_SESSION['usuario']= $email; 	
+				 echo"<script language='javascript' type='text/javascript'>alert('Usuário cadastrado com sucesso!');window.location.href='index.php'</script>";
+	        	}
 
-		$mysqlImg =addcslashes(fread(fopen($nomefinal, "r"), $tamanhoImg));
-
-		$query = "INSERT INTO provider (Name,Email,Cpf,DateOfBirth,Adress,Category,FantasyName,Password,imgprofile)
-			VALUES ('$name','$email','$cpf','$dataofbirth','$adress','$category','$fantasyname','password','$mysqlImg')";
-			mysqli_query($conn,$query);
+				} else {
+				echo "<script language='javascript' type='text/javascript'>alert('Impossivel realizar o cadastro');window.location.href='cadastrar-prestadores.php';</script>";
 			}
-
-			unlink($nomefinal);
-
-	}
-} else {
-	echo "<script language='javascript' type='text/javascript'>alert('Esse Cpf já existe em nosso cadastro');window.location.href='cadastro.html';</script>";
-			die();
-}
-
+		}
  ?>

@@ -1,30 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Pagina Inicial</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
+<?php 
+include_once'header.php'?>
 <body>
 <header>
 	<div class="menu">
 	<label>
 	<?php
-	session_start();
+
  	 //$login_cookie = $_COOKIE['Email'];
     if(!isset ($_SESSION['usuario']) == false){
     	$login_cookie = $_SESSION['usuario'];
 
       echo"<h5 class='bemvindo'>Bem-Vindo $login_cookie</h5>";
-      echo "<div class='dropdown' id='dropdown'>
-  		<button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>=</button>
-  <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-    <a class='dropdown-item' href='#'>Action</a>
-    <a class='dropdown-item' href='#'>Another action</a>
-    <a class='dropdown-item' href='#'>Something else here</a>
-  </div>
-</div>";
+      echo "<a href='' class='bemvindo'>Meus Pedidos</a>";	
       echo"<form method='get' action='logout.php'>
       <input type='submit' class='logout' value='Logout'></input>
       </form>";
@@ -34,8 +21,8 @@
       echo"<h5 class='bemvindo'>Bem-Vindo, convidado  </h5>";
       echo"<a class='logout' href='cadastrar.php' style='text-decoration:none'>Login</a>";
     }
-?>
-		</label>
+	?>
+	</label>
 	</div>
 	<h1 class="logo">WORKERS</h1>
 	<div class="menup">
@@ -61,11 +48,39 @@
 		if ($total > 0) {
 		 	do {
 		?>
-		<div class="mostraPrestadores">
-			<label><?=$linha['FantasyName']?></label>
-			<p><?=$linha['Cpf']?></p>
-			<p><?=$linha['category']?></p>
-			<button>Contratar</button>
+			<div class="card" style="width: 18rem;">
+			  <img class="card-img-top" src="http://www.congressosm.com.br/wp-content/uploads/2016/05/img-perfil.gif" alt="Imagem Perfil">
+			  <div class="card-body">
+			    <h5 class="card-title"><?=$linha['FantasyName']?></h5>
+			    <p class="card-text"><?=$linha['Cpf']?></p>
+			    <p class="card-text"><?=$linha['category']?></p>
+			    <a href="#" class="btn btn-primary">Go somewhere</a>
+			  </div>
+			</div>
+			<!-- Button trigger modal -->
+			<br>
+			<br>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 		</div>
 		<?php
         // finaliza o loop que vai mostrar os dados
