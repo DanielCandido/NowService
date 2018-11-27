@@ -1,7 +1,7 @@
 	<?php 
 			include_once("conexao.php");
 
-			$query = "SELECT FantasyName, Cpf, category  FROM provider";
+			$query = "SELECT FantasyName, Cpf, category, improfile  FROM provider";
 
 			$dados = mysqli_query($conn,$query);
 

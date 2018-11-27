@@ -1,7 +1,6 @@
 <?php 
-session_start();
 include_once("conexao.php");
- ?>
+?>
 <?php 
 $name =$_POST['Name'];
 $email =$_POST['Email'];
@@ -26,7 +25,7 @@ var_dump($longarray);
 			if (mysqli_affected_rows($conn) != 0) {
 			 $_SESSION['usuario']= $email; 	
 			 echo"<script language='javascript' type='text/javascript'>alert('Usuário cadastrado com sucesso!');window.location.href='index.php'</script>";
-        	}else {
+        	} else {
           	echo"<script language='javascript' type='text/javascript'>alert('Não foi possível cadastrar esse usuário:');window.location.href='cadastrar.php'</script>";
         	}
 		}

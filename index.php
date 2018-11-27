@@ -11,20 +11,19 @@ include_once'header.php'?>
     	$login_cookie = $_SESSION['usuario'];
 
       echo"<h5 class='bemvindo'>Bem-Vindo $login_cookie</h5>";
-      echo "<a href='' class='bemvindo'>Meus Pedidos</a>";	
-      echo"<form method='get' action='logout.php'>
-      <input type='submit' class='logout' value='Logout'></input>
-      </form>";
+      echo "<a href='' class='logout'>Meus Pedidos</a>";	
+      echo"
+      <a href='logout.php' class='logout'>Logout</a>
+      ";
     
     }else{
 
-      echo"<h5 class='bemvindo'>Bem-Vindo, convidado  </h5>";
-      echo"<a class='logout' href='cadastrar.php' style='text-decoration:none'>Login</a>";
+      echo"<h5 class='bemvindo'>Bem-Vindo, convidado </h5>";
+      echo"<label><a class='logout' href='cadastrar.php' style='text-decoration:none'>Login</a><label>";
     }
 	?>
 	</label>
 	</div>
-	<h1 class="logo">WORKERS</h1>
 	<div class="menup">
 	<ul class="nav nav-pills nav-fill" style="background-color: black; border-radius: 5px;">
   	<li class="nav-item">
@@ -48,15 +47,17 @@ include_once'header.php'?>
 		if ($total > 0) {
 		 	do {
 		?>
+		<div class="row">
 			<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src="http://www.congressosm.com.br/wp-content/uploads/2016/05/img-perfil.gif" alt="Imagem Perfil">
+			  <img class="card-img-top" src='<?=$linha['improfile']?>' alt="Imagem Perfil">
 			  <div class="card-body">
 			    <h5 class="card-title"><?=$linha['FantasyName']?></h5>
 			    <p class="card-text"><?=$linha['Cpf']?></p>
 			    <p class="card-text"><?=$linha['category']?></p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
+			    <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Ver Detalhes</a>
 			  </div>
 			</div>
+		</div>	
 			<!-- Button trigger modal -->
 			<br>
 			<br>

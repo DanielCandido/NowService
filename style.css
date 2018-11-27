@@ -7,12 +7,28 @@ body {
   margin: 0;
 }
 
+.body {
+	margin-left: 20px;
+	margin-top: 50px;
+	width: 400px;
+	height: 400px;
+}
 
-header {width: 100%; height: 300px; background-color: #337ab7;}
+
+header {
+	max-width: 100%; 
+	height: 300px; 
+	background-image: url(/img/banner4.jpg); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	margin-top: 0px;
+  }
 
 header div.menu{ height: 40px; width: 100%; background-color: #000000;}
 
-header div.menu a{color: #337ab7;}
+header div.menu a{color: #007bff;}
 
 header div.menu label{font-size: 20px; color: white;float: right;margin-top: 5px;}
 
@@ -22,17 +38,17 @@ header div.menup{
 	width: 80%;
 	margin-left: 10%;
 	background-color: #000000;
-	border-radius: 5px;
+	border-radius: 0px;
 	position: absolute;
 }
 
-header div.menup ul{background-color: #000000;}
+header div.menup ul{background-color: #000000; border-radius: 0px;}
 
 header div.menup li {float: left; width: 33.2%; text-align:center;  list-style-type: none;}
 
-header div.menup li a {font-size: 20px; text-decoration: none;}
+header div.menup li a {font-size: 20px; text-decoration: none;color: white;}
 
-header div.menup li a:hover{background-color: #337ab7; color: black;}
+header div.menup li a:hover{background-color: #007bff; color: white;}
 
 
 .form {
@@ -41,11 +57,11 @@ header div.menup li a:hover{background-color: #337ab7; color: black;}
 }
 
 form div.cadastro {
-	margin-left: -40px;
+	margin-left: 0px;
 	margin-top: 120px;
 	float: left;
 	width: 450px;
-	height: 450px;
+	height: 400px;
 	background-color: #E6E6E6;
 	border-radius: 5px;
 	margin-right: 60px;
@@ -90,12 +106,13 @@ footer {
 	margin-top: -30px;
 	border: 0px;
 	font-size: 15px;
-	margin-right: 40px;
+	margin-right: 20px;
+	display: inline;
 }
 
 .logo{font-size: 200px; text-align: center; color: #000000; position: absolute;margin-left: 12%;}
 
-.bemvindo {text-align: center;margin-right: 580px;}
+.bemvindo {text-align: center;margin-right: 580px; width: 400px;}
 
 .conteudo {margin-left: 15%; margin-right: 15%; margin-top: 80px;}
 

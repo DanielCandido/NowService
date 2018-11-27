@@ -1,8 +1,7 @@
 <?php
 	include_once'header.php';
   ?>
-<body class="body">
-<header>
+  <header>
 	<div class="menu">
 		<label>
 	<?php
@@ -19,7 +18,6 @@
 	?>
 		</label>
 	</div>
-	<h1 class="logo">WORKERS</h1>
 	<div class="menup">
 	<ul class="nav nav-pills nav-fill" style="background-color: black; border-radius: 5px;">
   	<li class="nav-item">
@@ -35,7 +33,7 @@
 	</ul>
 	</div>
 </header>
-
+<body class="body">
 <div class="form">
 <form method="POST" action="cadastro.php">
 
@@ -48,7 +46,7 @@
 			<input placeholder="CPF" required="" type="text" name="Cpf" id="Cpf">
 			<input placeholder="Data Nascimento" required="" max="2000-01-01"  type="date" name="DateOfBirth" id="DateOfBirth">
 			<input placeholder="Endereco" required="" type="text" name="Adress" id="Adress">
-			<input placeholder="Senha" required="" type="password" name="password" id="password"><br>
+			<input placeholder="Senha" required="" type="password" name="Password" id="Password"><br>
 		</div>
 		<input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar"></input>
 	</div>

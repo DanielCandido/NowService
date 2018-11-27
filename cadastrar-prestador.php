@@ -1,15 +1,6 @@
-<?php 
-session_start();
- ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Cadastro</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-<body class="body">
+<?php
+include_once'header.php'; 
+?>
 <header>
 	<div class="menu">
 		<label>
@@ -27,7 +18,6 @@ session_start();
 	?>
 		</label>
 	</div>
-	<h1 class="logo">WORKERS</h1>
 	<div class="menup">
 	<ul class="nav nav-pills nav-fill" style="background-color: black; border-radius: 5px;">
   	<li class="nav-item">
@@ -43,44 +33,68 @@ session_start();
 	</ul>
 	</div>
 </header>
+<body>
+<div class="container" style="margin-top: 50px;">	
+<div class="row col-xs-8 col-xs-offset-2">
+	
+<form>
 
-<div class="form">
-<form method="POST" action="cadastro-prestador.php">
+	<div class="form-group"> <!-- Name field -->
+		<label class="control-label " for="name">Name</label>
+		<input class="form-control" id="name" name="name" type="text"/>
+	</div>
+	
+	<div class="form-group"> <!-- Email field -->
+		<label class="control-label requiredField" for="email">Email<span class="asteriskField">*</span></label>
+		<input class="form-control" id="email" name="email" type="text"/>
+	</div>
+	
+	<div class="form-group"> <!-- Subject field -->
+		<label class="control-label " for="subject">Subject</label>
+		<input class="form-control" id="subject" name="subject" type="text"/>
+	</div>
+	
+	<div class="form-group"> <!-- Message field -->
+		<label class="control-label " for="message">Message</label>
+		<textarea class="form-control" cols="40" id="message" name="message" rows="10"></textarea>
+	</div>
+	
+	<div class="form-group">
+		<button class="btn btn-primary " name="submit" type="submit">Submit</button>
+	</div>
+	
+</form>	
 
-	<div class="cadastro">
-		<h2>Cadastre-se</h2>
-		<div class="linha"></div>
-		<div class="input-group mb-3">
-			<input placeholder="Nome" required="" type="text" name="Name" id="Name">
-			<input placeholder="Email" required="" type="email" name="Email" id="Email">
-			<input placeholder="CPF" required="" type="text" name="Cpf" id="Cpf">
-			<input placeholder="Data Nascimento" required="" max="2000-01-01"  type="date" name="DateOfBirth" id="DateOfBirth">
-			<input placeholder="Endereco" required="" type="text" name="Adress" id="Adress">
-			<input placeholder="Nome Fantasia" type="text" name="FantasyName" id="FantasyName">
-			<select id="Category">
-				<option>Categoria</option>
-				<option value="Jardinagem">Jardinagem</option>
-				<option value="Reformas Gerais">Reformas Gerais</option>
-			</select>
-			<input placeholder="Senha" required="" type="password" name="password" id="password"><br>
-			<label>Imagem de Perfil</label>
-			<input type="file" name="improfile" id="improfile">
-		</div>
-		<input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar"></input>
+
+<form>
+
+
+	<div class="form-group"> <!-- Name field -->
+		<label class="control-label " for="name">Name</label>
+		<input class="form-control" id="name" name="name" type="text"/>
 	</div>
-</form>
-<form method="POST" action="login.php">
-	<div class="cadastro">
-		<h2>Login</h2>
-		<div class="linha"></div>
-		<div class="input-group mb-3">
-			<input type="text" required="" placeholder="Login" name="Email" id="Email">
-			<input type="password" required="" placeholder="Senha" name="password" id="password">
-		</div>
-		<input type="submit" value="Entrar" name="entrar" id="entrar">
+	
+	<div class="form-group"> <!-- Email field -->
+		<label class="control-label requiredField" for="email">Email<span class="asteriskField">*</span></label>
+		<input class="form-control" id="email" name="email" type="text"/>
 	</div>
-</form>
+	
+	<div class="form-group"> <!-- Subject field -->
+		<label class="control-label " for="subject">Subject</label>
+		<input class="form-control" id="subject" name="subject" type="text"/>
+	</div>
+	
+	<div class="form-group"> <!-- Message field -->
+		<label class="control-label " for="message">Message</label>
+		<textarea class="form-control" cols="40" id="message" name="message" rows="10"></textarea>
+	</div>
+	
+	<div class="form-group">
+		<button class="btn btn-primary " name="submit" type="submit">Submit</button>
+	</div>
+	
+</form>	
+</div>										
 </div>
-
 </body>
 </html>
