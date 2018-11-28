@@ -13,7 +13,7 @@
     }else{
 
       echo"<h5 class='bemvindo'>Bem-Vindo, convidado</h5> ";
-      echo"<a href='cadastrar.php' class='logout' style='text-decoration:none'>Login</a>";
+      echo"<label><a href='cadastrar.php' class='logout btn btn-primary' style='text-decoration:none'>Login</a><label>";
     }
 	?>
 		</label>

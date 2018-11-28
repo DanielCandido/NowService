@@ -4,12 +4,12 @@ include_once'head.php'?>
 <?php include_once'header.php' ?>
 
 	<div class="container" style="margin-top: 20px;">
+    <div  class="row" style="padding: 10px;">
 		<?php
 		include_once("listarprestadores.php");
 		if ($total > 0) {
 		 	do {
 		?>
-		<div  class="row" style="padding: 10px; display: inherit; float: left;">
       <div class="col-sm-6" >
 			<div class="card" style="width: 15rem;" id="card">
 			  <img class="card-img-top" src='<?=$linha['imgprofile']?>' alt="Imagem Perfil">
@@ -23,7 +23,6 @@ include_once'head.php'?>
         </div>
 			</div>
 		</div>
-    </div>	
 			<!-- Button trigger modal -->
 			<br>
 			<br>
@@ -56,6 +55,7 @@ include_once'head.php'?>
     	}
 		?>	
 	</div>
+   </div> 
 
 </body>
 </html>

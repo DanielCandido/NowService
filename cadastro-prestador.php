@@ -55,14 +55,15 @@ $longarray = $array['Cpf'];
 					move_uploaded_file($imgperfil['tmp_name'], $caminho);*/
 					else {
 					$nome_imagem = '/fotos/perfil.png';
-					$query = "INSERT INTO provider (Name,Email,Cpf,DateOfBirth,Adress,category,FantasyName,Password,imgprofile,Phone,Cellphone)
-					VALUES ('$name','$email','$cpf','$dataofbirth','$adress','$category','$fantasyname','password','$nome_imagem','$phone','$cellphone')";
+					$status = 'Em análise';
+					$query = "INSERT INTO provider (Name,Email,Cpf,DateOfBirth,Adress,category,FantasyName,Password,imgprofile,Phone,Cellphone,Status)
+					VALUES ('$name','$email','$cpf','$dataofbirth','$adress','$category','$fantasyname','password','$nome_imagem','$phone','$cellphone','$status')";
 					var_export($query);
 					$insert = mysqli_query($conn,$query);
 					var_export($insert);
 						if (mysqli_affected_rows($conn) != 0) {
 					 	$_SESSION['usuario']= $email; 	
-					 	echo"<script language='javascript' type='text/javascript'>alert('Usuário cadastrado com sucesso!');window.location.href='index.php'</script>";
+					 	echo"<script language='javascript' type='text/javascript'>alert('Prestador cadastrado com sucesso!');window.location.href='index.php'</script>";
 				 	} else {
 		    
 						echo "<script language='javascript' type='text/javascript'>alert('Impossivel realizar o cadastro');window.location.href='cadastrar-prestadores.php';</script>";

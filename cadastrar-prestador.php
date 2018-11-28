@@ -1,5 +1,5 @@
 <?php
-include_once'header.php'; 
+include_once'head.php'; 
 ?>
 <header>
 	<div class="menu">
