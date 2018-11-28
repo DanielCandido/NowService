@@ -1,16 +1,39 @@
-<?php 
-	session_start();
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Pagina Inicial</title>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
+<header>
+  <div class="menu">
+  <label>
+  <?php
 
+   //$login_cookie = $_COOKIE['Email'];
+    if(!isset ($_SESSION['logado']) == false){
+      $login_cookie = $_SESSION['logado'];
+
+      echo"<h5 class='bemvindo'>Bem-Vindo $login_cookie</h5>";
+      echo "<a href='' class='logout'>Meus Pedidos</a>";  
+      echo"
+      <a href='logout.php' class='logout'>Logout</a>
+      ";
+    
+    }else{
+
+      echo"<h5 class='bemvindo'>Bem-Vindo, convidado </h5>";
+      echo"<label><a class='logout btn btn-primary' href='cadastrar.php' style='text-decoration:none'>Login</a><label>";
+    }
+  ?>
+  </label>
+  </div>
+  <div class="menup">
+  <ul class="nav nav-pills nav-fill" style="background-color: black; border-radius: 5px;">
+    <li class="nav-item">
+    <a class="nav-link active" href="#">Inicio</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#">Sobre nós</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#">Categorias</a>
+    </li>
+    </li>
+  </ul>
+    </ul>
+  </div>
+  </header>
