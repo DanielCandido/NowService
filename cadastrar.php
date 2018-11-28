@@ -33,7 +33,7 @@
 	</ul>
 	</div>
 </header>
-<body class="body">
+<body>
 <div class="form">
 <form method="POST" action="cadastro.php">
 

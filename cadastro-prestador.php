@@ -7,6 +7,8 @@ $email = $_POST['Email'];
 $cpf = $_POST['Cpf'];
 $dataofbirth = $_POST['DateOfBirth'];
 $adress = $_POST['Adress'];
+$phone = $_POST['Phone'];
+$cellphone = $_POST['Cellphone'];
 $fantasyname = $_POST['FantasyName'];
 $category = $_POST['Category'];
 $password = md5($_POST['Password']);
@@ -53,9 +55,11 @@ $longarray = $array['Cpf'];
 					move_uploaded_file($imgperfil['tmp_name'], $caminho);*/
 					else {
 					$nome_imagem = '/fotos/perfil.png';
-					$query = "INSERT INTO provider (Name,Email,Cpf,DateOfBirth,Adress,Category,FantasyName,Password,improfile)
-					VALUES ('$name','$email','$cpf','$dataofbirth','$adress','$category','$fantasyname','password','$nome_imagem')";
+					$query = "INSERT INTO provider (Name,Email,Cpf,DateOfBirth,Adress,category,FantasyName,Password,imgprofile,Phone,Cellphone)
+					VALUES ('$name','$email','$cpf','$dataofbirth','$adress','$category','$fantasyname','password','$nome_imagem','$phone','$cellphone')";
+					var_export($query);
 					$insert = mysqli_query($conn,$query);
+					var_export($insert);
 						if (mysqli_affected_rows($conn) != 0) {
 					 	$_SESSION['usuario']= $email; 	
 					 	echo"<script language='javascript' type='text/javascript'>alert('Usuário cadastrado com sucesso!');window.location.href='index.php'</script>";

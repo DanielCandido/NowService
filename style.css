@@ -100,14 +100,14 @@ footer {
 }
 
 .logout {
-	background-color: black;
-	color: blue;
+	color: white;
 	float: right;
-	margin-top: -30px;
+	margin-top: -42px;
 	border: 0px;
 	font-size: 15px;
-	margin-right: 20px;
+	margin-right: 0px;
 	display: inline;
+	height: 40px;
 }
 
 .logo{font-size: 200px; text-align: center; color: #000000; position: absolute;margin-left: 12%;}

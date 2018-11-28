@@ -19,7 +19,7 @@ include_once'header.php'?>
     }else{
 
       echo"<h5 class='bemvindo'>Bem-Vindo, convidado </h5>";
-      echo"<label><a class='logout' href='cadastrar.php' style='text-decoration:none'>Login</a><label>";
+      echo"<label><a class='logout btn btn-primary' href='cadastrar.php' style='text-decoration:none'>Login</a><label>";
     }
 	?>
 	</label>
@@ -41,23 +41,27 @@ include_once'header.php'?>
 	</div>
 	</header>
 
-	<div class="conteudo">
+	<div class="container" style="margin-top: 20px;">
 		<?php
 		include_once("listarprestadores.php");
 		if ($total > 0) {
 		 	do {
 		?>
-		<div class="row">
-			<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src='<?=$linha['improfile']?>' alt="Imagem Perfil">
+		<div  class="row" style="padding: 10px; display: inherit; float: left;">
+      <div class="col-sm-6" >
+			<div class="card" style="width: 15rem;" id="card">
+			  <img class="card-img-top" src='<?=$linha['imgprofile']?>' alt="Imagem Perfil">
 			  <div class="card-body">
 			    <h5 class="card-title"><?=$linha['FantasyName']?></h5>
-			    <p class="card-text"><?=$linha['Cpf']?></p>
+			    <p class="card-text"><?=$linha['Cellphone']?></p>
+          <p class="card-text"><?=$linha['Phone']?></p> 
+          <p class="card-text"><?=$linha['Email']?></p>         
 			    <p class="card-text"><?=$linha['category']?></p>
 			    <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Ver Detalhes</a>
-			  </div>
+        </div>
 			</div>
-		</div>	
+		</div>
+    </div>	
 			<!-- Button trigger modal -->
 			<br>
 			<br>
@@ -90,6 +94,6 @@ include_once'header.php'?>
     	}
 		?>	
 	</div>
-	<footer></footer>
+
 </body>
 </html>
