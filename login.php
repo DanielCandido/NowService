@@ -3,7 +3,7 @@
   session_start();
   $email = $_POST['Email'];
   $entrar = $_POST['entrar'];
-  $password = md5($_POST['password']);
+  $password = md5($_POST['Password']);
   
     if (isset($entrar)) {
       $query = "SELECT Name, Email, Cpf, DateOfBirth, Adress  FROM users WHERE Email = '$email' AND password = '$password'";

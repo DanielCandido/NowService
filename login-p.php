@@ -9,7 +9,7 @@
       $query = "SELECT Name, Email, Cpf, FantasyName  FROM provider WHERE Email = '$email' AND Password = '$password'";
       $verifica = mysqli_query($conn,$query);
         if (mysqli_num_rows($verifica)<=0){
-          echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='cadastrar.php';</script>";
+          echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='cadastrar-prestador.php';</script>";
           die();
         }else{
           $row = mysqli_fetch_assoc($verifica);

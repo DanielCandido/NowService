@@ -1,68 +1,84 @@
 <?php
-	include_once'head.php';
+include_once'head.php';
   ?>
-  <header>
-	<div class="menu">
-		<label>
-	<?php
- 	 //$login_cookie = $_COOKIE['Email'];
-    if(!isset ($_SESSION['usuario']) == false){
-    	
-  		header("Location: index.php");
-    
-    }else{
-
-      echo"<h5 class='bemvindo'>Bem-Vindo, convidado</h5> ";
-      echo"<label><a href='cadastrar.php' class='logout btn btn-primary' style='text-decoration:none'>Login</a><label>";
-    }
-	?>
-		</label>
-	</div>
-	<div class="menup">
-	<ul class="nav nav-pills nav-fill" style="background-color: black; border-radius: 5px;">
-  	<li class="nav-item">
-    <a class="nav-link active" href="index.php">Inicio</a>
-  	</li>
-  	<li class="nav-item">
-    <a class="nav-link" href="#">Sobre</a>
-  	</li>
-  	<li class="nav-item">
-    <a class="nav-link" href="#">Categorias</a>
-  	</li>
-  	</li>
-	</ul>
-	</div>
-</header>
+  <?php include_once'header.php' ?>
 <body>
-<div class="form">
+
+<div class="container">	
+<h1 style="text-align: center; margin-top: 50px;">Bem vindo usuário</h1>
+<a href="cadastrar-prestador.php" style="margin-left: 35%;">Trabalhe Conosco</a>	
+<div class="row">	
 <form method="POST" action="cadastro.php">
-
-	<div class="cadastro">
-		<h2>Cadastre-se</h2>
-		<div class="linha"></div>
-		<div class="input-group mb-3">
-			<input placeholder="Nome" required="" type="text" name="Name" id="Name">
-			<input placeholder="Email" required="" type="email" name="Email" id="Email">
-			<input placeholder="CPF" required="" type="text" name="Cpf" id="Cpf">
-			<input placeholder="Data Nascimento" required="" max="2000-01-01"  type="date" name="DateOfBirth" id="DateOfBirth">
-			<input placeholder="Endereco" required="" type="text" name="Adress" id="Adress">
-			<input placeholder="Senha" required="" type="password" name="Password" id="Password"><br>
-		</div>
-		<input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar"></input>
+<div class="col-md-8" style="padding: 50px; padding-top: 80px; margin-left: 260px;">
+	<h2>Cadastre-se</h2>
+	<div class="form-group"> <!-- Name field -->
+		<label class="control-label requiredField" for="name">Nome</label>
+		<input class="form-control" required="" id="Name" name="Name" type="text"/>
 	</div>
-</form>
+	
+	<div class="form-group"> <!-- Email field -->
+		<label class="control-label requiredField" for="email">Email</label>
+		<input class="form-control" required="" id="Email" name="Email" type="email"/>
+	</div>
+	
+	<div class="form-group"> <!-- CPF field -->
+		<label class="control-label requiredField" for="subject">CPF</label>
+		<input class="form-control" required="" id="Cpf" name="Cpf" type="text"/>
+	</div>
+
+	<div class="form-group"> <!-- DateOfBirth field -->
+		<label class="control-label requiredField" for="subject">Data de nascimento</label>
+		<input class="form-control" required="" id="DateOfBirth" name="DateOfBirth" type="date"/>
+	</div>
+
+	<div class="form-group"> <!-- Adress field -->
+		<label class="control-label requiredField" for="subject">Endereço</label>
+		<input class="form-control" required="" id="Adress" name="Adress" type="text"/>
+	</div>
+
+	<div class="form-group"> <!-- Phone field -->
+		<label class="control-label requiredField" for="subject">Telefone</label>
+		<input class="form-control" required="" id="Phone" name="Phone" type="text"/>
+	</div>
+
+	<div class="form-group"> <!-- Cellphone field -->
+		<label class="control-label requiredField" for="subject">Celular</label>
+		<input class="form-control" required="" id="Cellphone" name="Cellphone" type="text"/>
+	</div>
+
+
+	<div class="form-group"> <!-- Senha field -->
+		<label class="control-label requiredField" for="subject">Senha</label>
+		<input class="form-control" required="" id="password" name="password" type="password"/>
+	</div>
+
+	
+	<div class="form-group">
+		<button class="btn btn-primary " name="submit" type="submit">Cadastrar</button>
+	</div>
+</div>	
+</form>	
+
+
 <form method="POST" action="login.php">
-	<div class="cadastro">
-		<h2>Login</h2>
-		<div class="linha"></div>
-		<div class="input-group mb-3">
-			<input type="text" required="" placeholder="Login" name="Email" id="Email">
-			<input type="password" required="" placeholder="Senha" name="password" id="password">
-		</div>
-		<input type="submit" value="Entrar" name="entrar" id="entrar">
+<div style="padding: 118px; padding-top: 80px;">
+<h2>Entrar</h2>
+	<div class="form-group"> <!-- Email field -->
+		<label class="control-label requiredField" for="email">Email</label>
+		<input class="form-control" id="Email" name="Email" type="text"/>
 	</div>
-</form>
+	
+	<div class="form-group"> <!-- Subject field -->
+		<label class="control-label " for="subject">Senha</label>
+		<input class="form-control" id="Password" name="Password" type="password"/>
+	</div>
+		
+	<div class="form-group">
+		<button class="btn btn-primary " name="entrar" id="entrar" type="submit">Login</button>
+	</div>
+</div>	
+</form>										
 </div>
-
+</div>
 </body>
 </html>

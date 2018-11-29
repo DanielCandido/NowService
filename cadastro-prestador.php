@@ -57,13 +57,16 @@ $longarray = $array['Cpf'];
 					$nome_imagem = '/fotos/perfil.png';
 					$status = 'Em análise';
 					$query = "INSERT INTO provider (Name,Email,Cpf,DateOfBirth,Adress,category,FantasyName,Password,imgprofile,Phone,Cellphone,Status)
-					VALUES ('$name','$email','$cpf','$dataofbirth','$adress','$category','$fantasyname','password','$nome_imagem','$phone','$cellphone','$status')";
+					VALUES ('$name','$email','$cpf','$dataofbirth','$adress','$category','$fantasyname','$password','$nome_imagem','$phone','$cellphone','$status')";
 					var_export($query);
 					$insert = mysqli_query($conn,$query);
 					var_export($insert);
 						if (mysqli_affected_rows($conn) != 0) {
+						$row = mysqli_fetch_assoc($insert);
+						session_start();
+						$_SESSION['p-logado']=$row['FantasyName'];	
 					 	$_SESSION['usuario']= $email; 	
-					 	echo"<script language='javascript' type='text/javascript'>alert('Prestador cadastrado com sucesso!');window.location.href='index.php'</script>";
+					 	echo"<script language='javascript' type='text/javascript'>alert('Prestador cadastrado com sucesso!');window.location.href='minhasordens.php'</script>";
 				 	} else {
 		    
 						echo "<script language='javascript' type='text/javascript'>alert('Impossivel realizar o cadastro');window.location.href='cadastrar-prestadores.php';</script>";

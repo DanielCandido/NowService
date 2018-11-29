@@ -1,48 +1,17 @@
 <?php
 include_once'head.php'; 
 ?>
-<header>
-	<div class="menu">
-		<label>
-	<?php
- 	 //$login_cookie = $_COOKIE['Email'];
-    if(!isset ($_SESSION['usuario']) == false){
-    	
-  		header("Location: index.php");
-    
-    } if (!isset($_SESSION['prestador']) == false){
-    	header("Locatin: minhasordens.php");
-    }
-
-    else{
-
-      echo"<h5 class='bemvindo'>Bem-Vindo, convidado</h5> ";
-      echo"<a href='cadastrar-prestador.php' class='logout btn btn-primary' style='text-decoration:none'>Login</a>";
-    }
-	?>
-		</label>
-	</div>
-	<div class="menup">
-	<ul class="nav nav-pills nav-fill" style="background-color: black; border-radius: 5px;">
-  	<li class="nav-item">
-    <a class="nav-link active" href="index.php">Inicio</a>
-  	</li>
-  	<li class="nav-item">
-    <a class="nav-link" href="#">Sobre</a>
-  	</li>
-  	<li class="nav-item">
-    <a class="nav-link" href="#">Categorias</a>
-  	</li>
-  	</li>
-	</ul>
-	</div>
-</header>
+<?php 
+include_once'header-p.php'?>
 <body>
-<div class="container">		
+
+<div class="container">	
+<h1 style="text-align: center; margin-top: 50px;">Bem vindo prestador</h1>	
+<a href="cadastrar.php" style="text-align: center; margin-left: 33%;">Não é prestador?</a>
 <div class="row">	
 <form method="POST" action="cadastro-prestador.php">
-<div style="padding-right: 50px; padding-top: 80px; margin-left: 260px;">
-	<h1>Cadastre-se</h1>
+<div class="col-md-8" style="padding-right: 50px; padding-top: 80px; margin-left: 260px;">
+	<h2>Cadastre-se</h2>
 	<div class="form-group"> <!-- Name field -->
 		<label class="control-label requiredField" for="name">Nome</label>
 		<input class="form-control" required="" id="Name" name="Name" type="text"/>
@@ -92,6 +61,7 @@ include_once'head.php';
 			<option value="Eletricista" id="Category" name="Category">Eletricista</option>
 			<option value="Encanador" id="Category" name="Category">Encanador</option>
 			<option value="Pedreiro" id="Category" name="Category">Pedreiro</option>
+			<option value="Pintura" id="Category" name="Category">Pintura</option>
 		</select>
 	</div>
 
@@ -110,7 +80,7 @@ include_once'head.php';
 
 <form method="POST" action="login-p.php">
 <div style="padding-left: 50px; padding-top: 80px;">
-<h1>Entrar</h1>
+<h2>Entrar</h2>
 	<div class="form-group"> <!-- Email field -->
 		<label class="control-label requiredField" for="email">Email</label>
 		<input class="form-control" id="Email" name="Email" type="text"/>

@@ -11,15 +11,15 @@ include_once'head.php'?>
 		 	do {
 		?>
       <div class="col-sm-4" >
-			<div class="card" style="width: 18rem;" id="card">
-			  <img class="card-img-top" src='<?=$linha['imgprofile']?>' alt="Imagem Perfil">
+			<div class="card" style="width: 18rem; margin-top: 20px;" id="card">
+			  <img class="card-img-top" style="height: 180px;" src='<?=$linha['imgprofile']?>' alt="Imagem Perfil">
 			  <div class="card-body">
 			    <h5 class="card-title"><?=$linha['FantasyName']?></h5>
 			    <p class="card-text"><?=$linha['Cellphone']?></p>
           <p class="card-text"><?=$linha['Phone']?></p> 
           <p class="card-text"><?=$linha['Email']?></p>         
 			    <p class="card-text"><?=$linha['category']?></p>
-			    <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Ver Detalhes</a>
+			    <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Contratar</a>
         </div>
 			</div>
 		</div>
@@ -56,6 +56,8 @@ include_once'head.php'?>
 		?>	
 	</div>
    </div> 
-<footer></footer>
+<footer>
+  <a href="cadastrar-prestador.php" class="btn btn-link">Trabalhe conosco</a>
+</footer>
 </body>
 </html>

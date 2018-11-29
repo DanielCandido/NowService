@@ -23,18 +23,27 @@
     }else{
 
       echo"<h5 class='bemvindo'>Bem-Vindo, convidado </h5>";
-      echo"<label><a class='logout btn btn-primary' href='cadastrar.php' style='text-decoration:none'>Login</a><label>";
+      echo"<a class='logout btn btn-primary' href='cadastrar.php' style='text-decoration:none'>Login</a>";
     }
   ?>
   </label>
   </div>
   <div class="menup">
   <ul class="nav nav-pills nav-fill" style="background-color: black; border-radius: 5px;">
+    <?php 
+      if ($_SESSION['p-logado'] != null) {
+       echo" <li class='nav-item'>
+    <a class='nav-link active' href='minhasordens.php''>Inicio</a>
+    </li>";
+      } else{
+        echo"
+         <li class='nav-item'>
+    <a class='nav-link active' href='/'>Inicio</a>
+    </li>";
+      }
+     ?>
     <li class="nav-item">
-    <a class="nav-link active" href="/">Inicio</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link" href="#">Sobre nós</a>
+    <a class="nav-link" href="sobre.php">Sobre nós</a>
     </li>
     <li class="nav-item">
     <a class="nav-link" href="#">Categorias</a>

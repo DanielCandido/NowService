@@ -16,6 +16,7 @@ include_once 'head.php'?>
 	
 
 	?>
+<h1>Editar Perfil</h1>
 <form method="POST" action="atualizarusuario.php">	
 <div class="form-group row">
   	<label for="example-text-input" class="col-2 col-form-label">Nome</label>

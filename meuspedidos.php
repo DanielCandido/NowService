@@ -4,6 +4,7 @@
 <body>
 	 <?php include_once 'header.php'?>
 	 <div class="container">
+	 	<h1 style="margin-top: 50px;">Meus Pedidos</h1>
 	 <div class="row">
 	 <?php 
 	 	include_once ("conexao.php");
@@ -17,7 +18,7 @@
 	 		do {
 	  ?>
 	  <div class="col-sm-4" style="margin-top: 50px;">
-	  	<div class="card">
+	  	<div class="card" style="height:  310px;">
 	  		<div class="card-body"> 
 	  			<h5>ORDEM DE SERVIÇO</h5>
 	  			<p class="card-text"><b>Nº Ordem: </b><?=$linha['IdOrder']?></p>
@@ -25,10 +26,19 @@
 	  			<p class="card-text"><b>Nome Prestador: </b><?=$linha['IdProvider']?></p>
 	  			<p class="card-text"><b>Data do pedido: </b><?=$linha['DateOrder']?></p>
 	  			<p class="card-text"><b>Status: </b><?=$linha['Status']?></p>
+	  			<?php
+	  				if ($linha['Status'] == 'Aguardando aprovação') {
+	  					echo "<button class='btn btn-danger' value='Cancelar'>Cancelar</button>";
+	  				} else {
+	  					echo "<div class='alert alert-warning' role='alert'>
+ Solicitação ja em andamento
+</div>";
+	  				}
+	  			?>
 	  		</div>
 	  	</div>	
 	  </div>
-	 </div>
+	
 	 <?php
 	 	}while ($linha = mysqli_fetch_assoc($dados)); 
 	 } else {
@@ -39,6 +49,7 @@
 	 }
 
 	 ?> 
+	  </div>
 	 </div>	
 </body>
 </html>

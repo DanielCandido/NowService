@@ -1,43 +1,36 @@
 <header>
-	<div class="menu">
-		<label>
-	<?php
- 	 //$login_cookie = $_COOKIE['Email'];
-    if(!isset ($_SESSION['p-logado']) == false){
-    	$login_cookie = $_SESSION['p-logado'];
-        echo"<h5 class='bemvindo'>Bem-Vindo $login_cookie</h5>";
-      echo "<div class='logout dropdown'>
-      <button class='btn btn-secondary dropdown-toggle'style='width:155px;height:45px;' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-        Menu
-      </button>
-      <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-        <a class='dropdown-item' style='color:black' href='meuspedidos.php'>Meus Pedidos</a>
-        <a class='dropdown-item' style='color:black' href='editarperfil.php'>Perfil</a>
-        <a class='dropdown-item' style='color:black' href='logout.php'>Sair</a>
-      </div>
-    </div> 
-      ";
-    } 
+  <div class="menu">
+    <label>
+  <?php
+   //$login_cookie = $_COOKIE['Email'];
+    if(!isset ($_SESSION['usuario']) == false){
+      
+      header("Location: index.php");
+    
+    } if (!isset($_SESSION['prestador']) == false){
+      header("Locatin: minhasordens.php");
+    }
 
     else{
 
-     header("Location:cadastrar-prestador.php");
+      echo"<h5 class='bemvindo'>Bem-Vindo, convidado</h5> ";
+      echo"<a href='cadastrar-prestador.php' class='logout btn btn-primary' style='text-decoration:none'>Login</a>";
     }
-	?>
-		</label>
-	</div>
-	<div class="menup">
-	<ul class="nav nav-pills nav-fill" style="background-color: black; border-radius: 5px;">
-  	<li class="nav-item">
-    <a class="nav-link active" href="index.php">Inicio</a>
-  	</li>
-  	<li class="nav-item">
-    <a class="nav-link" href="#">Sobre</a>
-  	</li>
-  	<li class="nav-item">
+  ?>
+    </label>
+  </div>
+  <div class="menup">
+  <ul class="nav nav-pills nav-fill" style="background-color: black; border-radius: 5px;">
+    <li class="nav-item">
+    <a class="nav-link active" href="minhasordens.php">Inicio</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="#">Sobre nós</a>
+    </li>
+    <li class="nav-item">
     <a class="nav-link" href="#">Categorias</a>
-  	</li>
-  	</li>
-	</ul>
-	</div>
+    </li>
+    </li>
+  </ul>
+  </div>
 </header>
