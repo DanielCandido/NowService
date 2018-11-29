@@ -10,10 +10,14 @@ include_once'head.php';
     	
   		header("Location: index.php");
     
-    }else{
+    } if (!isset($_SESSION['prestador']) == false){
+    	header("Locatin: minhasordens.php");
+    }
+
+    else{
 
       echo"<h5 class='bemvindo'>Bem-Vindo, convidado</h5> ";
-      echo"<a href='cadastrar.php' class='logout' style='text-decoration:none'>Login</a>";
+      echo"<a href='cadastrar-prestador.php' class='logout btn btn-primary' style='text-decoration:none'>Login</a>";
     }
 	?>
 		</label>
@@ -34,11 +38,11 @@ include_once'head.php';
 	</div>
 </header>
 <body>
-<div class="container" style="margin-top: 50px;">	
-<div class="row col-xs-8 col-xs-offset-2">
-	
+<div class="container">		
+<div class="row">	
 <form method="POST" action="cadastro-prestador.php">
-
+<div style="padding-right: 50px; padding-top: 80px; margin-left: 260px;">
+	<h1>Cadastre-se</h1>
 	<div class="form-group"> <!-- Name field -->
 		<label class="control-label requiredField" for="name">Nome</label>
 		<input class="form-control" required="" id="Name" name="Name" type="text"/>
@@ -100,39 +104,30 @@ include_once'head.php';
 	<div class="form-group">
 		<button class="btn btn-primary " name="submit" type="submit">Cadastrar</button>
 	</div>
-	
+</div>	
 </form>	
 
 
-<form>
-
-
-	<div class="form-group"> <!-- Name field -->
-		<label class="control-label " for="name">Name</label>
-		<input class="form-control" id="name" name="name" type="text"/>
-	</div>
-	
+<form method="POST" action="login-p.php">
+<div style="padding-left: 50px; padding-top: 80px;">
+<h1>Entrar</h1>
 	<div class="form-group"> <!-- Email field -->
-		<label class="control-label requiredField" for="email">Email<span class="asteriskField">*</span></label>
-		<input class="form-control" id="email" name="email" type="text"/>
+		<label class="control-label requiredField" for="email">Email</label>
+		<input class="form-control" id="Email" name="Email" type="text"/>
 	</div>
 	
 	<div class="form-group"> <!-- Subject field -->
-		<label class="control-label " for="subject">Subject</label>
-		<input class="form-control" id="subject" name="subject" type="text"/>
+		<label class="control-label " for="subject">Senha</label>
+		<input class="form-control" id="Password" name="Password" type="password"/>
 	</div>
-	
-	<div class="form-group"> <!-- Message field -->
-		<label class="control-label " for="message">Message</label>
-		<textarea class="form-control" cols="40" id="message" name="message" rows="10"></textarea>
-	</div>
-	
+		
 	<div class="form-group">
-		<button class="btn btn-primary " name="submit" type="submit">Submit</button>
+		<button class="btn btn-primary " name="entrar" id="entrar" type="submit">Login</button>
 	</div>
-	
-</form>	
-</div>										
+</div>	
+</form>										
+</div>
 </div>
 </body>
+<footer></footer>
 </html>

@@ -8,10 +8,16 @@
       $login_cookie = $_SESSION['logado'];
 
       echo"<h5 class='bemvindo'>Bem-Vindo $login_cookie</h5>";
-      echo "
-      <label><a href='logout.php' class='logout btn btn-primary' >Logout</a></label>
-      <label><a href='meuspedidos.php' class='logout btn btn-primary' style='border-radius: 0px;'>Meus Pedidos</a> </label> 
-      <label><a href='meuspedidos.php' class='logout btn btn-primary'>Editar Perfil</a> </label> 
+      echo "<div class='logout dropdown'>
+  <button class='btn btn-secondary dropdown-toggle'style='width:155px;height:45px;' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+    Menu
+  </button>
+  <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+    <a class='dropdown-item' style='color:black' href='meuspedidos.php'>Meus Pedidos</a>
+    <a class='dropdown-item' style='color:black' href='editarperfil.php'>Perfil</a>
+    <a class='dropdown-item' style='color:black' href='logout.php'>Sair</a>
+  </div>
+</div> 
       ";
     
     }else{

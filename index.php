@@ -10,8 +10,8 @@ include_once'head.php'?>
 		if ($total > 0) {
 		 	do {
 		?>
-      <div class="col-sm-6" >
-			<div class="card" style="width: 15rem;" id="card">
+      <div class="col-sm-4" >
+			<div class="card" style="width: 18rem;" id="card">
 			  <img class="card-img-top" src='<?=$linha['imgprofile']?>' alt="Imagem Perfil">
 			  <div class="card-body">
 			    <h5 class="card-title"><?=$linha['FantasyName']?></h5>
@@ -56,6 +56,6 @@ include_once'head.php'?>
 		?>	
 	</div>
    </div> 
-
+<footer></footer>
 </body>
 </html>

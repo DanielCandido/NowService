@@ -8,7 +8,6 @@
 	 <?php 
 	 	include_once ("conexao.php");
 	 	$id = $_SESSION['id'];
-	 	var_export($id);
 	 	$query = "SELECT IdOrder, IdUser, IdProvider, DateOrder, Status FROM orderservice WHERE IdUser = '$id'";
 	 	$dados = mysqli_query($conn,$query);
 	 	$linha = mysqli_fetch_assoc($dados);
